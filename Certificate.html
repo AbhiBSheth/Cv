@@ -8,6 +8,8 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+  
   <title>Certificate</title>
   <style>
     .jumbotron {
@@ -32,6 +34,18 @@
 </head>
 
 <body>
+  <script>
+      $(document).ready(function() {
+          $("body").on("contextmenu", function(e) {
+              return false;
+            });
+        });
+      $(document).ready(function() {
+          $('body').bind('cut copy', function(e) {
+              e.preventDefault();
+            });
+        });
+    </script>
   <div class="container-fluid">
     <div class="jumbotron">
       <h1>Certificates</h1>
@@ -140,19 +154,6 @@
       </div>
     </div>
   </div>
-  <script>
-      $(document).ready(function() {
-          $("body").on("contextmenu", function(e) {
-              return false;
-            });
-        });
-      $(document).ready(function() {
-          $('body').bind('cut copy', function(e) {
-              e.preventDefault();
-            });
-        });
-    </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
   <script>
     baguetteBox.run(".gallery", {
