@@ -50,16 +50,15 @@
     event.stopPropagation();
     return false;
     };
-    function () {
-  var blockContextMenu, myElement;
+   document.oncontextmenu=RightMouseDown;
+  document.onmousedown = mouseDown; 
 
-  blockContextMenu = function (evt) {
-    evt.preventDefault();
-  };
-
-  myElement = document.querySelector('#myElement');
-  myElement.addEventListener('contextmenu', blockContextMenu);
-}();
+  function mouseDown(e) {
+      if (e.which==3) {//righClick
+      alert("Disabled - do whatever you like here..");
+   }
+}
+function RightMouseDown() { return false;}
     </script>
   <div class="container-fluid">
     <div class="jumbotron">
