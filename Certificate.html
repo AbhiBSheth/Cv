@@ -30,9 +30,6 @@
     img {
       pointer-events: none;
     }
-    .disabled {
-    pointer-events: none;
-}
   </style>
 </head>
 
@@ -48,6 +45,16 @@
               e.preventDefault();
             });
         });
+    (function () {
+  var blockContextMenu, myElement;
+
+  blockContextMenu = function (evt) {
+    evt.preventDefault();
+  };
+
+  myElement = document.querySelector('#myElement');
+  myElement.addEventListener('contextmenu', blockContextMenu);
+})();
     </script>
   <div class="container-fluid">
     <div class="jumbotron">
