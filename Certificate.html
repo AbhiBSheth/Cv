@@ -45,7 +45,12 @@
               e.preventDefault();
             });
         });
-    (function () {
+    window.oncontextmenu = function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+    };
+    function () {
   var blockContextMenu, myElement;
 
   blockContextMenu = function (evt) {
@@ -54,7 +59,7 @@
 
   myElement = document.querySelector('#myElement');
   myElement.addEventListener('contextmenu', blockContextMenu);
-})();
+}();
     </script>
   <div class="container-fluid">
     <div class="jumbotron">
